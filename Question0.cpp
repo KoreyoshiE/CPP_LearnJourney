@@ -2,7 +2,6 @@
 #include <limits>
 #include <iomanip>
 
-// Function to calculate average acceleration
 double computeAcceleration(double v1, double v0, double t) {
     return (v1 - v0) / t;
 }
@@ -32,3 +31,4 @@ int main() {
 
     return 0;
 }
+
