@@ -13,27 +13,22 @@ int main() {
     std::cout << "Enter v1, v0, t (separated by space or newline): ";
 
     while (true) {
-        // Try to read three numbers from input
         if (std::cin >> v1 >> v0 >> t) {
-            // Check if time is valid
             if (t <= 0.0) {
                 std::cout << "Input error: Time must be greater than 0. Please re-enter v1 v0 t: ";
-                continue;  // Ask user to enter values again
+                continue;  
             }
 
-            // Calculate and display average acceleration with 2 decimal places
             double a = computeAcceleration(v1, v0, t);
             std::cout << std::fixed << std::setprecision(2);
             std::cout << "The average acceleration is " << a << std::endl;
-            break;  // Exit the loop after successful calculation
+            break;  
         } else {
-            // If input is invalid (not numbers)
             std::cout << "Input error: Please enter three numeric values (e.g., 10 5 2). Try again: ";
-            std::cin.clear();  // Clear error flag
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Discard invalid input
+            std::cin.clear();   
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
         }
     }
 
     return 0;
 }
-
